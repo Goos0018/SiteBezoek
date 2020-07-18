@@ -56,7 +56,13 @@ public class Verdeling {
     }
 
     public String vroegste() {
-        return "ok";
+        int vroegste = Integer.MAX_VALUE;
+        for (int i = 0; i < AANTAL; i++) {
+            if (this.tijden[i].toInteger() < vroegste) {
+                vroegste = this.tijden[i].toInteger();
+            }
+        }
+        return String.valueOf(vroegste);
     }
 
 
