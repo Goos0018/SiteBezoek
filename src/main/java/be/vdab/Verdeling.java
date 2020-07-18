@@ -1,7 +1,5 @@
 package be.vdab;
 
-import be.vdab.Tijd;
-
 public class Verdeling {
 
     static final int AANTAL = 1000;
@@ -17,32 +15,48 @@ public class Verdeling {
         }
     }
 
-    public void genereerBezoekersTijden(){
-
+    public void genereerBezoekersTijden() {
+        for (int i = 0; i < AANTAL; i++) {
+            Tijd nTijd = new Tijd();
+            nTijd.maakRandomTijd();
+            this.tijden[i] = nTijd;
+        }
     }
 
-   public int getControleTotaal(){
-
-   }
+    public int getControleTotaal() {
+        int som = 0;
+        for (int value : uren) {
+            som += value;
+        }
+        return som;
+    }
 
     public int[] getUren() {
         return uren;
     }
 
-    public String laatste(){
-
+    public String laatste() {
+        return "ok";
     }
 
-    public String toonVerdeling(){
-
+    public void toonVerdeling() {
+        for (int i = 0; i < uren.length; i++) {
+            System.out.println("Uur " + i + ": " + uren[i]);
+        }
     }
 
-    public void voegBezoekersTijdenToe(){
-
+    public void voegBezoekersTijdenToe() {
+        for (int i = 0; i < AANTAL; i++) {
+            for (int j = 0; j < this.uren.length; j++) {
+                if (this.tijden[i].getUren() == j) {
+                    this.uren[j]++;
+                }
+            }
+        }
     }
 
-    public String vroegste(){
-
+    public String vroegste() {
+        return "ok";
     }
 
 

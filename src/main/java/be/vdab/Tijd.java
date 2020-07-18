@@ -38,8 +38,7 @@ public class Tijd {
     }
 
     public int toInteger(){
-       return 0;
-
+        return Integer.parseInt(String.valueOf(uren) + String.valueOf(minuten) + String.valueOf(seconden) + String.valueOf(honderdsten));
     }
 
     @Override
