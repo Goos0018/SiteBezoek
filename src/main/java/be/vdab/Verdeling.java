@@ -35,10 +35,6 @@ public class Verdeling {
         return uren;
     }
 
-    public String laatste() {
-        return "ok";
-    }
-
     public void toonVerdeling() {
         for (int i = 0; i < uren.length; i++) {
             System.out.println("Uur " + i + ": " + uren[i]);
@@ -65,5 +61,14 @@ public class Verdeling {
         return String.valueOf(vroegste);
     }
 
+    public String laatste() {
+        int laatste = Integer.MIN_VALUE;
+        for (int i = 0; i < AANTAL; i++) {
+            if (this.tijden[i].toInteger() > laatste) {
+                laatste = this.tijden[i].toInteger();
+            }
+        }
+        return String.valueOf(laatste);
+    }
 
 }
